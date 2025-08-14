@@ -1,0 +1,655 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.glow-text {
+    color: #ff780a;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff3333;
+    animation: glowPulse 2s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 5px #ff1010;
+    }
+    50% {
+        text-shadow: 0 0 25px #ff3333;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff00cc;
+    }
+}
+
+.glow-btn {
+    position: relative;
+    background-color: #ff9407;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 0 10px #ff00cc;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 20px #ff33ff, 0 0 40px #ff33ff;
+}
+
+.glow-btn .star {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    font-size: 20px;
+    color: #ff3300;
+    animation: star-glow 1s ease-out forwards;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.glow-btn:hover .star {
+    animation: star-glow 1s ease-out forwards;
+}
+
+@keyframes star-glow {
+    0% {
+        left: -20px;
+        top: 50%;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        left: 120%;
+        top: 20%;
+        opacity: 0;
+    }
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* Utility Classes */
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    border: 1px solid #fff;
+}
+
+.btn-secondary,
+.btn-third:hover {
+    background: #292933;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-third {
+    background: #030302;
+}
+
+.primary-text {
+    color: #ff5100;
+}
+
+
+/* Header Start */
+
+header {
+    height: 100vh;
+    background: url("./uuyy.jpg") center center/cover no-repeat;
+    position: relative;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+#navbar img {
+    width: 80px;
+    margin-left: 100px;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 100px;
+}
+
+nav ul li a {
+    padding: 15px 20px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #d8ab49;
+}
+
+header .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    /* Add exmple of greeen background */
+}
+
+header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0, 0.6);
+}
+
+header .content h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+header .content p {
+    color: #fff;
+    margin: 20px 0 40px;
+}
+
+header * {
+    z-index: 10;
+}
+
+
+/* Header End */
+
+
+/* About Start */
+
+#about {
+    height: 80vh;
+    background: #dfd3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .title,
+#offers .title,
+#menu .title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#about h2,
+#offers h2,
+#menu h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#about h2 {
+    color: #383848;
+}
+
+#about .title p {
+    font-weight: 600;
+    font-size: 14px;
+    color: #999898;
+}
+
+#about .about-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#about .about-content p {
+    margin-right: 7rem;
+    line-height: 1.6;
+    color: #918686;
+    font-weight: 500;
+}
+
+#about img {
+    max-width: 450px;
+}
+
+#about .about-content a {
+    margin-top: 2rem;
+}
+
+
+/* About End */
+
+
+/* Offers Section start */
+
+#offers {
+    height: 80vh;
+    background: url("./r3.jpeg") center center/cover fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#offers h2 {
+    color: #e4b95b;
+}
+
+#offers .title p {
+    color: #fff;
+    font-weight: 500;
+}
+
+#offers .offers-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+#offers .offers-items img {
+    width: 200px;
+}
+
+#offers .offers-items h3 {
+    font-size: 25px;
+    color: #fff;
+    margin: 15px 0;
+}
+
+#offers .offers-items p {
+    color: #fff;
+    font-size: 14px;
+    padding: 0 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+#offers .offers-items span {
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+
+/* Offers Section end */
+
+
+/* Menu Section Start */
+
+#menu {
+    background: rgb(223, 214, 212);
+    padding: 5rem 0;
+}
+
+#menu .title h2 {
+    color: #0b0b0c;
+}
+
+#menu .title p {
+    color: #141212;
+    font-weight: 500;
+}
+
+#menu .menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu .menu-items .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+#menu .menu-items .menu-item img {
+    width: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+#menu .menu-items .menu-item h3 {
+    color: #1f1f20;
+    border-bottom: 1px dashed #c2bdbd;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+#menu .menu-items .menu-item span {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+#menu .menu-items .menu-item p {
+    margin-top: 10px;
+}
+
+#menu .btn {
+    display: block;
+    margin: auto;
+    border: none;
+    margin-top: 30px;
+}
+
+
+/* Menu Section End */
+
+
+/* Daytime section Start */
+
+#daytime {
+    background: url("./h8.jpeg") center center/cover fixed no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+#daytime .daytime-items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+}
+
+#daytime .daytime-items h3 {
+    font-size: 32px;
+    margin: 20px 0 10px;
+}
+
+#daytime .daytime-items p {
+    font-weight: 500;
+}
+
+
+/* Daytime section End */
+
+
+/* Gallery section start */
+
+#gallery {
+    background: rgb(223, 213, 213);
+    padding: 8rem 0 6rem;
+}
+
+#gallery h2 {
+    font-size: 40px;
+    color: #332c2c;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#gallery .img-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#gallery .img-gallery img {
+    margin: 20px;
+    width: 280px;
+    height: 200px;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+#gallery .img-gallery img:hover {
+    opacity: 1;
+}
+
+
+/* Gallery section end */
+
+
+/* Contact Section start */
+
+#contact {
+    background: #241c1c;
+    padding: 5rem 0;
+}
+
+#contact .container {
+    max-width: 900px;
+}
+
+#contact .contact-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#contact .contact-info {
+    width: 50%;
+}
+
+#contact .contact-info div {
+    margin: 30px 0;
+    line-height: 1.7;
+}
+
+#contact .contact-info h3 {
+    font-size: 28px;
+    color: #020202;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info p {
+    color: #fffdfd;
+}
+
+#contact .contact-info p i {
+    color: #e4b95b;
+    margin-right: 5px;
+}
+
+#contact .contact-info a i {
+    color: #fff;
+    background: #000000;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+#contact .contact-info a i:hover {
+    background-color: #ffae00;
+    color: #212133;
+}
+
+form {
+    width: 50%;
+}
+
+form input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 20px 15px;
+    margin: 20px 0;
+    border: none;
+    background-color: #e3e2dd;
+}
+
+form input:focus,
+textarea:focus {
+    outline: none;
+}
+
+form button {
+    color: #fff;
+}
+
+
+/* Contact Section End */
+
+
+/* خلفية الفوتر غامقة عشان يبان التأثير */
+
+#footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+/* النص الأساسي يلمع */
+
+.footer-glow {
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 0 5px #9e5454, 0 0 10px #ff0000;
+}
+
+
+/* اللينك نفسه يلمع أكتر عند المرور */
+
+.glow-link {
+    color: #080808;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 8px #ff6666;
+}
+
+.glow-link:hover {
+    color: #fff700;
+    text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
+}
+
+
+/* Footer Start */
+
+#footer {
+    background-color: #383848;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+
+/* Footer End */
+
+
+/* Responsiveness */
+
+
+/* Medium Screen + Tablet */
+
+@media (max-width: 1000px) {
+    #navbar img {
+        margin-left: 20px;
+    }
+    nav ul {
+        margin-right: 20px;
+    }
+    nav ul li a {
+        padding: 10px;
+    }
+    header .content h1 {
+        font-size: 28px;
+    }
+    #about {
+        height: auto;
+        padding: 4rem 2rem;
+    }
+    #about .about-content p {
+        margin-right: 2rem;
+    }
+    #about img {
+        width: 250px;
+    }
+    #offers .offers-items img {
+        width: 150px;
+    }
+    #offers .offers-items h3 {
+        font-size: 18px;
+    }
+    #menu .menu-items {
+        display: block;
+    }
+    #contact .contact-content {
+        flex-direction: column;
+    }
+    /* Mobile Devices */
+    @media (max-width: 600px) {
+        #navbar {
+            flex-direction: column;
+        }
+        #navbar img {
+            margin-bottom: 20px;
+        }
+        header .content h1 {
+            font-size: 18px;
+        }
+        header .content p {
+            font-size: 14px;
+        }
+        #about .about-content {
+            flex-direction: column;
+        }
+        #about .about-content a {
+            margin: 2rem 0;
+        }
+        #about img {
+            display: none;
+        }
+        #offers {
+            height: auto;
+            padding: 30px 10px;
+        }
+        #offers .offers-items {
+            flex-direction: column;
+        }
+        #menu .menu-items .menu-item {
+            margin: 20px 10px;
+        }
+        #daytime .daytime-items {
+            display: block;
+            height: auto;
+            padding: 30px 0;
+        }
+        #daytime .daytime-items .daytime-item {
+            margin-top: 20px;
+        }
+        #contact .contact-info,
+        form {
+            width: 80%;
+        }
+    }
+}
